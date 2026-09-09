@@ -57,5 +57,5 @@ def test_retries_on_connection_error(monkeypatch):
     result = llm_gateway.generate([{"role": "user", "content": "hi"}])
 
     assert result == "recovered"
-    assert calls[0] == "gpt-4o-mini"
+    assert attempts[0] == "gpt-4o-mini"
     assert len(attempts) == 2
