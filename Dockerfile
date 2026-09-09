@@ -8,6 +8,7 @@ WORKDIR /srv
 COPY --from=ghcr.io/astral-sh/uv:0.4 /uv /usr/local/bin/uv
 
 COPY pyproject.toml ./
+COPY README.md ./
 COPY app ./app
 
 RUN uv pip install --system --no-cache .
